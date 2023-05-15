@@ -31,7 +31,9 @@ def merge(stripped,parts):
     txt=stripped.format(*parts)
     return txt
 
-
+def save_file(stripped):
+     with open('assets/new-file.txt', "w") as new_file:
+        new_file.write(stripped)
 if __name__ == '__main__':
     read_template('assets/make-me-a-game.txt')
     firstTxt=read_template('assets/make-me-a-game.txt') 
@@ -52,3 +54,4 @@ if __name__ == '__main__':
     userinputs=userInputs(parts)
         
     print(merge(stripped,userinputs))
+    save_file(merge(stripped,userinputs))
